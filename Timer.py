@@ -8,7 +8,7 @@ def update_time():
 root = tk.Tk()
 root.title("Digital Clock")
 root.geometry("500x200")
-label = tk.Label(root,font=('calibri',40,'bold'),background='black',foreground='green')
+label = tk.Label(root,font=('calibri',40,'bold'),background='black',foreground='#00ff00')
 label.pack(anchor="center",fill="both", expand=True) 
 update_time()
 root.mainloop()

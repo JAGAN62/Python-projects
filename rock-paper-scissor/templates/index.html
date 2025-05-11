@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+
+        h1 {
+            font-size: 3rem;
+            color: #004d40;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease;
+        }
+
+        form {
+            animation: fadeIn 1.5s ease;
+        }
+
+        button {
+            font-size: 2rem;
+            padding: 15px 25px;
+            margin: 15px;
+            cursor: pointer;
+            border: none;
+            background-color: #009688;
+            color: white;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        #reset{
+            color:white;
+            background-color: blue;
+            padding:8px;
+            font-size: 15px;
+            position: absolute;
+            top:53vh;
+        }
+
+        button:hover {
+            background-color: #00796b;
+            transform: scale(1.1);
+        }
+
+        .result {
+            margin-top: 40px;
+            font-size: 1.5rem;
+            color: #004d40;
+            animation: fadeInUp 1s ease;
+        }
+
+        .score {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: #d32f2f;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .score span {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1.5rem;
+        padding: 12px 20px;
+        margin: 10px;
+    }
+    #reset{
+        top:53vh;
+    }
+
+    .score {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1rem;
+    }
+
+    .result {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+    }
+     #reset{
+        top:33vh;
+    }
+
+    .score span {
+        padding: 8px 15px;
+    }
+}
+
+      
+    </style>
+</head>
+<body>
+    <h1>Rock, Paper, Scissors 🪨📄✂️</h1>
+    
+   <form method="POST">
+    <button type="submit" name="choice" value="rock">🪨 Rock</button>
+    <button type="submit" name="choice" value="paper">📄 Paper</button>
+    <button type="submit" name="choice" value="scissors">✂️ Scissors</button>
+    <button id='reset' type="submit" name="choice" value="reset">🔄 Reset Game</button>
+</form>
+
+{% if result %}
+<div class="result">
+    <p><strong>{{ result }}</strong></p>
+    <p>You chose: <strong >{{ user }}</strong></p>
+    <p>Computer chose: <strong>{{ computer }}</strong></p>
+</div>
+{% endif %}
+
+<div class="score">
+    <span>🎯 Your Score: <span style="color:blue;background: transparent;">{{c1}}</span></span>
+    <span>🤖 Computer Score: <span style="color:blue;background: transparent;">{{c2}}</span></span>
+</div>
+
+</body>
+</html>
